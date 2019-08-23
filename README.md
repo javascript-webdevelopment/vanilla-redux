@@ -170,3 +170,41 @@ Once, that's installed we will setup a folder called `redux` inside of `src` to 
 |   +-- app.js
 |   +-- index.js
 `
+
+Now let's go ahead an setup the `store` file, go ahead and copy & paste the following code
+
+```js
+import {createStore} from 'redux';
+import reducer from './reducer';
+
+export default createStore(reducer);
+```
+
+After setting up the store, hop into `~/redux/reducer.js` and setup the basic outline for a reducer file.
+
+The first thing we will do is create the initial redux state that our reducer will interact with. This will just be an empty object.
+
+```js
+const initialState = {};
+```
+
+Now we will create the reducer function. Remember to expert this function so it can be imported into our store.
+
+```js
+const reducer = (state = initialState, action) => {
+    switch(action.type){
+        default:
+            return state;
+    }
+};
+```
+
+Above we are using `default parameters` to have our state be equal to our `initialState` object. This will prevent us from having to manually pass in our state everytime an action is dispatched.
+
+Then we are receiving the `action` object that we will use as a list of instructions on how to update our state in our switch statement, then we return a new updated state object.
+
+### Using Redux In Our Components
+
+We are now setup and good to with Redux, so let's start using it in our React component. Please refer to `~/src/app.js`, `~/src/redux/reducer.js`, and `~/src/redux/store.js` to find notes and examples on how to do this.
+
+The example being used in this repo is a very unrealistic use case of redux because it's a single component that we are using it in. Remember, we want to avoid using redux in smaller applications and just follow normal react dataflow patterns with prop drilling, but once the project scales to a size that's extremely large, then redux becomes extremely useful.
