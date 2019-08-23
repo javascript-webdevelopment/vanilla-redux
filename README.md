@@ -93,4 +93,24 @@ function reducer(state, action){
 
 Above we are receiving the current state and the set of instructions on how to update state (action) as arguments. Then we check to what type of action we have recieved and then execute the case inside the switch statement that matches the action type. It then returns a object that will be our updated state object.
 
-This pattern using actions and reducer functions to update state is what makes up around 85% of redux. Notice this is just vanilla Javascript so we can implement this into any framework using Javascript like React, Angular, Node, etc.
+![reducer pattern](images/reducer.png)
+
+This pattern that's using actions and reducer functions to update state is what makes up around 85% of redux. Notice this is just vanilla Javascript so we can implement this into any framework using Javascript like React, Angular, Node, etc.
+
+Now you're probably asking "How do we implement this in React?". We will need to first create a `store` to and bring in all of our reducer functions into it.
+
+## Store
+
+The `store` is what holds the redux state tree for our application. The only way to change the values on this state is to `dispatch` an action to it.
+
+We will create our store by passing our reducer into it. 
+
+```js
+import {createStore} from 'redux';
+import reducer from './reducer';
+// this function creates the store and we pass our root reducer to it
+export default createStore(reducer);
+```
+
+This will return an object that will have methods on it to update our redux state. We will import that object into our components to use those methods.
+
