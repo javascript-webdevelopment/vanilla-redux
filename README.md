@@ -164,11 +164,11 @@ Once, that's installed we will setup a folder called `redux` inside of `src` to 
 
 ```js
 +-- src
-|   +-- redux
-|       +-- store.js
-|       +-- reducer.js
-|   +-- app.js
-|   +-- index.js
+   +-- redux
+       +-- store.js
+       +-- reducer.js
+   +-- app.js
+   +-- index.js
 ```
 
 Now let's go ahead an setup the `store` file, go ahead and copy & paste the following code
