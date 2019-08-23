@@ -114,3 +114,47 @@ export default createStore(reducer);
 
 This will return an object that will have methods on it to update our redux state. We will import that object into our components to use those methods.
 
+### Store Methods
+
+There are a few methods that come from the store object that we will use to get and update the redux state.
+
+#### subscribe
+
+`subscribe` is the method we can use to have our component actively listen to the store for any changes on our redux state. It will take in a callback function that will be executed whenever there is a change to the state tree.
+
+```js
+store.subscribe(() => {
+    // logic to happen whenever state is update, usually call the getState() method
+});
+```
+
+#### getState
+
+`getState` is the the method that we will use to get thew current redux state values. We will usually call this upon inital mounting of the component and in the `subscribe` method.
+
+```js
+store.subscribe(() => {
+    this.setState({
+        store: store.getState();
+    });
+});
+```
+
+#### dispatch
+
+`dispatch` is the method we will use to send an `action` object to update our redux state. This is the only way to update our redux state.
+
+```js
+<button onClick={() => store.dispatch({type: ADD_TODO, payload: this.state.newTodo})}>ADD TODO</button>
+```
+
+The example above is adding a new todo to the todo list that is stored on redux.
+
+## Get Started
+
+Now that we have discussed redux, reducer functions, and the store, let's go ahead and get started by using it into our React application.
+
+We first need to install redux, so in your terminal run
+
+```bash
+$ npm install
