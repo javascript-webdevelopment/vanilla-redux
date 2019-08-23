@@ -157,4 +157,16 @@ Now that we have discussed redux, reducer functions, and the store, let's go ahe
 We first need to install redux, so in your terminal run
 
 ```bash
-$ npm install
+$ npm install redux
+```
+
+Once, that's installed we will setup a folder called `redux` inside of `src` to house our `store` and `reducers`.
+
+`
++-- src
+|   +-- redux
+|       +-- store.js
+|       +-- reducer.js
+|   +-- app.js
+|   +-- index.js
+`
