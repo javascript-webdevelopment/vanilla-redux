@@ -162,14 +162,14 @@ $ npm install redux
 
 Once, that's installed we will setup a folder called `redux` inside of `src` to house our `store` and `reducers`.
 
-`
+```js
 +-- src
 |   +-- redux
 |       +-- store.js
 |       +-- reducer.js
 |   +-- app.js
 |   +-- index.js
-`
+```
 
 Now let's go ahead an setup the `store` file, go ahead and copy & paste the following code
 
